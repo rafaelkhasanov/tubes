@@ -487,7 +487,7 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript">
-		$('.slider-deck').slick({
+		$('.slider-deck').not('.slick-initialized').slick({
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			autoplay: true,
@@ -495,7 +495,7 @@
 		});
 	</script>
 	<script type="text/javascript">
-		$('.center-block').slick({
+		$('.center-block').not('.slick-initialized').slick({
 			centerMode: true,
 			centerPadding: '60px',
 			slidesToShow: 3,
