@@ -28,21 +28,7 @@
   font-family: 'PFDinTextCompPro-XThinItalic';
   src: url(../fonts/PFDinTextCompPro-XThinItalic.ttf);
 }
-/*body,
-html {
-	height: 100%;
-}*/
-.slider {
-  background-color: #f8f8f8;
-}
-.slider .slider-deck img {
-  width: 350px;
-  height: 250px;
-  margin: auto;
-}
-.center-block img {
-  margin: auto;
-}
+
 section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -240,6 +226,7 @@ section {
 #aboutUs .down .box img {
   width: 65px;
   height: 65px;
+  margin:auto;
 }
 #aboutUs .down .box i {
   color: #6699cc;
