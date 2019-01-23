@@ -1,0 +1,466 @@
+@font-face {
+  font-family: 'PFDinTextCompPro-Bold';
+  src: url(../fonts/PFDinTextCompPro-Bold_0.otf);
+  font-family: 'PFDinTextCompPro-BoldItalic';
+  src: url(../fonts/PFDinTextC`ompPro-BoldItalic.ttf);
+  font-family: 'PFDinTextCompPro-Italic';
+  src: url(../fonts/PFDinTextCompPro-Italic.ttf);
+  font-family: 'PFDinTextCompPro-Light';
+  src: url(../fonts/PFDinTextCompPro-Light_0.ttf);
+  font-family: 'PFDinTextCompPro-LightItalic';
+  src: url(../fonts/PFDinTextCompPro-LightItalic.ttf);
+  font-family: 'PFDinTextCompPro-Medium';
+  src: url(../fonts/PFDinTextCompPro-Medium_0.ttf);
+  font-family: 'PFDinTextCompPro-MediumItalic';
+  src: url(../fonts/PFDinTextCompPro-MediumItalic.ttf);
+  font-family: 'PFDinTextCompPro-Regular';
+  src: url(../fonts/PFDinTextCompPro-Regular.ttf);
+  font-family: 'PFDinTextCompPro-Thin';
+  src: url(../fonts/PFDinTextCompPro-Thin.ttf);
+  font-family: 'PFDinTextCompPro-ThinItalic';
+  src: url(../fonts/PFDinTextCompPro-ThinItalic.ttf);
+  font-family: 'PFDinTextCompPro-XBlack';
+  src: url(../fonts/PFDinTextCompPro-XBlack.ttf);
+  font-family: 'PFDinTextCompPro-XBlackItalic';
+  src: url(../fonts/PFDinTextCompPro-XBlackItalic.ttf);
+  font-family: 'PFDinTextCompPro-XThin';
+  src: url(../fonts/PFDinTextCompPro-XThin.ttf);
+  font-family: 'PFDinTextCompPro-XThinItalic';
+  src: url(../fonts/PFDinTextCompPro-XThinItalic.ttf);
+}
+/*body,
+html {
+	height: 100%;
+}*/
+.slider {
+  background-color: #f8f8f8;
+}
+.slider .slider-deck img {
+  width: 350px;
+  height: 250px;
+  margin: auto;
+}
+.center-block img {
+  margin: auto;
+}
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999999;
+  display: none;
+  pointer-events: none;
+}
+.modal-window {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  margin: 15% auto;
+  padding: 20px 20px 15px 20px;
+  border-radius: 10px;
+  background: #fdfdfd;
+}
+.modal-window .close {
+  color: blue;
+  font-weight: bold;
+  position: absolute;
+  font-size: 18px;
+  top: 5%;
+  right: 5%;
+}
+.modal-window h4,
+.modal-window p,
+.modal-window input,
+.modal-window button {
+  text-align: center;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.modal-window button {
+  height: 35px;
+  background: #6699cc;
+  border: none;
+  color: white;
+}
+.modal-window button:hover {
+  background: #02478d;
+}
+.modal:target {
+  display: block;
+  pointer-events: auto;
+}
+.main-nav {
+  background-color: #fff;
+}
+.main-nav-row {
+  height: 110px;
+}
+.main-nav-row img {
+  width: 170px;
+  height: 20px;
+  padding-left: 0px;
+}
+.main-nav-row .link-bar {
+  margin-left: 40px;
+  margin-right: 50px;
+}
+.main-nav-row .link-bar a {
+  border: 0px solid #333333;
+  padding: 10px 10px 10px 5px;
+  font-size: 14px;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-weight: bold;
+  color: #333333;
+  display: inline-block;
+  text-decoration: none;
+}
+.main-nav-row .link-bar a:hover {
+  border-bottom: 2px solid #6699cc;
+  margin-bottom: -2px;
+}
+.main-nav-row span {
+  font-size: 18px;
+  font-family: 'PFDinTextCompPro-Medium';
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.main-nav-row span i {
+  transform: scale(-1, 1);
+  font-size: 18px;
+  color: #6699cc;
+}
+.main-nav-row .btn-enter {
+  background-color: #6699cc;
+  border-color: #6699cc;
+}
+.main:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  opacity: 0.7;
+  z-index: 1;
+}
+.main {
+  background-image: url(../img/bg/fon1.JPG);
+  background-size: cover;
+  background-position: 50% 70%;
+  position: relative;
+  margin-top: 120px;
+}
+.main-container {
+  position: relative;
+  z-index: 2;
+}
+.main-container .left-box {
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+.main-container .left-box-text {
+  font-size: 38px;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-weight: bold;
+}
+.main-container .left-box-marks div {
+  padding-top: 10px;
+}
+.main-container .left-box-marks div span {
+  font-size: 22px;
+  font-family: 'PFDinTextCompPro-Thin';
+}
+.main-container .left-box-marks img {
+  width: 25px;
+  height: 25px;
+}
+.main-container .left-box-btn button {
+  width: 270px;
+  height: 70px;
+  background-color: #6699cc;
+  color: white;
+  border-radius: 5px;
+  margin-top: 60px;
+  border: none;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-size: 20px;
+  font-weight: bolder;
+}
+.main .right-box img {
+  position: absolute;
+}
+.main .right-box-img1 {
+  width: 215px;
+  height: 300px;
+  right: 140px;
+  bottom: 0px;
+  z-index: 5;
+}
+.main .right-box-img2 {
+  width: 215px;
+  height: 370px;
+  right: 70px;
+  bottom: 0px;
+  z-index: 4;
+}
+.main .right-box-img3 {
+  width: 215px;
+  height: 440px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 3;
+}
+#aboutUs {
+  background-color: #f8f8f8;
+}
+#aboutUs .up-text {
+  font-size: 40px;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-weight: bolder;
+}
+#aboutUs .down {
+  margin-top: 65px;
+}
+#aboutUs .down .box {
+  width: 250px;
+  height: 250px;
+  padding: 30px 0px;
+  margin: auto;
+}
+#aboutUs .down .box img {
+  width: 65px;
+  height: 65px;
+}
+#aboutUs .down .box i {
+  color: #6699cc;
+}
+#aboutUs .down .box p {
+  margin-top: 40px;
+  font-size: 18px;
+  font-family: 'PFDinTextCompPro-Light';
+  font-weight: bolder;
+  color: #333333;
+}
+#aboutUs .down .box p strong {
+  font-size: 20px;
+  color: #6699cc;
+}
+#aboutUs .down .box:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 32px 0px rgba(51, 51, 51, 0.1);
+}
+#section2 {
+  background-image: url(../img/bg/fon3.JPG);
+  background-size: cover;
+  background-position: 40% 0%;
+  position: relative;
+  max-height: 815px;
+}
+#section2 .section2-container {
+  max-height: 600px;
+  position: relative;
+  z-index: 2;
+}
+#section2 .section2-container .up {
+  margin-bottom: 60px;
+}
+#section2 .section2-container .center {
+  margin-bottom: 60px;
+}
+#section2 .section2-container .center-col p img {
+  width: 25px;
+  height: 25px;
+}
+#section2 .section2-container .center-col button {
+  width: 270px;
+  height: 70px;
+  background-color: #6699cc;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-size: 20px;
+  font-weight: bolder;
+}
+#section2 .section2-container .down-col div {
+  background: #fff;
+  height: 350px;
+  padding-left: 60px;
+}
+#section2 .section2-container .down-col div h3 {
+  padding: 60px 0px;
+}
+#section2 .section2-container .down-col div p {
+  font-size: 16px;
+}
+#section2 .section2-container .down-col div p img {
+  width: 25px;
+  height: 25px;
+}
+#section2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  opacity: 0.7;
+  z-index: 1;
+}
+#typePipes {
+  padding-bottom: 0px;
+  background-color: #f8f8f8;
+}
+#typePipes .up {
+  margin-bottom: 100px;
+}
+#typePipes .down-cols-box {
+  width: 100%;
+  padding-top: 15px;
+}
+#typePipes .down-cols-box p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: 'PFDinTextCompPro-Light';
+  font-weight: bolder;
+  color: #333333;
+}
+#typePipes .down-cols-box img {
+  margin-top: 10px;
+}
+#typePipes .down-cols-box:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 32px 0px rgba(51, 51, 51, 0.1);
+}
+#typePipes .down-cols-box:hover p {
+  color: #6699cc;
+}
+#section4 .row1-text {
+  font-size: 32px;
+  color: #6699cc;
+  font-family: fantasy;
+}
+#section4 .row2 {
+  margin-bottom: 30px;
+}
+#section4 .row2-text {
+  font-size: 20px;
+  font-family: 'PFDinTextCompPro-Light';
+  color: #666666;
+}
+#section4 .row3 {
+  margin-bottom: 30px;
+}
+#section4 .row3 h6 {
+  font-size: 20px;
+  color: black;
+  font-family: fantasy;
+}
+#section4 .row3 ul {
+  font-size: 16px;
+  padding-inline-start: 20px;
+}
+#section4 .row4 .card-bottom-area {
+  background-color: #f8f8f8;
+}
+#section4 .row4 .card-bottom-area .btn-buy {
+  padding: 15px 80px;
+  background-color: #6699cc;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-family: 'PFDinTextCompPro-Medium';
+  font-size: 14px;
+  font-weight: bolder;
+}
+#section4 .row4 .card-bottom-area .product-name {
+  color: #666666;
+  font-family: initial;
+  opacity: 0.8;
+}
+#section4 .row4 .card-bottom-area .product-price {
+  font-size: 22px;
+  color: #333333;
+  font-family: fantasy;
+}
+#section4 .row4 .cards:hover img {
+  opacity: 0.6;
+}
+#section5 {
+  background-color: #f8f8f8;
+}
+#section5 .row2 {
+  margin-top: 60px;
+}
+#section5 .row2 .row2-cols {
+  height: 250px;
+  background-color: #fff;
+  padding-top: 30px;
+  margin: 0px;
+}
+#section5 .row2 .row2-cols ul,
+#section5 .row2 .row2-cols li {
+  margin: 0px;
+  padding: 0px;
+}
+#advantages .line {
+  margin-bottom: 150px;
+}
+#advantages div {
+  border: none;
+}
+#advantages img {
+  max-width: 25%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+footer {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #333333;
+}
+footer .col-1 img,
+footer .col-2 img,
+footer .col-3 img {
+  max-width: 10%;
+}
+footer .col-1 .firstP,
+footer .col-2 .firstP,
+footer .col-3 .firstP {
+  color: grey;
+}
+footer .col-1 p,
+footer .col-2 p,
+footer .col-3 p {
+  color: white;
+}
+footer .col-1 h6,
+footer .col-2 h6,
+footer .col-3 h6 {
+  color: white;
+}
+footer .col-1 input,
+footer .col-2 input,
+footer .col-3 input {
+  padding: 10px 60px 10px 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+footer .col-1 .textarea,
+footer .col-2 .textarea,
+footer .col-3 .textarea {
+  padding-bottom: 70px;
+}

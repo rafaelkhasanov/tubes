@@ -1,0 +1,599 @@
+//Base fonts
+
+@font-face {
+	font-family: 'PFDinTextCompPro-Bold';
+	src: url(../fonts/PFDinTextCompPro-Bold_0.otf);
+	font-family: 'PFDinTextCompPro-BoldItalic';
+	src: url(../fonts/PFDinTextC`ompPro-BoldItalic.ttf);
+	font-family: 'PFDinTextCompPro-Italic';
+	src: url(../fonts/PFDinTextCompPro-Italic.ttf);
+	font-family: 'PFDinTextCompPro-Light';
+	src: url(../fonts/PFDinTextCompPro-Light_0.ttf);
+	font-family: 'PFDinTextCompPro-LightItalic';
+	src: url(../fonts/PFDinTextCompPro-LightItalic.ttf);
+	font-family: 'PFDinTextCompPro-Medium';
+	src: url(../fonts/PFDinTextCompPro-Medium_0.ttf);
+	font-family: 'PFDinTextCompPro-MediumItalic';
+	src: url(../fonts/PFDinTextCompPro-MediumItalic.ttf);
+	font-family: 'PFDinTextCompPro-Regular';
+	src: url(../fonts/PFDinTextCompPro-Regular.ttf);
+	font-family: 'PFDinTextCompPro-Thin';
+	src: url(../fonts/PFDinTextCompPro-Thin.ttf);
+	font-family: 'PFDinTextCompPro-ThinItalic';
+	src: url(../fonts/PFDinTextCompPro-ThinItalic.ttf);
+	font-family: 'PFDinTextCompPro-XBlack';
+	src: url(../fonts/PFDinTextCompPro-XBlack.ttf);
+	font-family: 'PFDinTextCompPro-XBlackItalic';
+	src: url(../fonts/PFDinTextCompPro-XBlackItalic.ttf);
+	font-family: 'PFDinTextCompPro-XThin';
+	src: url(../fonts/PFDinTextCompPro-XThin.ttf);
+	font-family: 'PFDinTextCompPro-XThinItalic';
+	src: url(../fonts/PFDinTextCompPro-XThinItalic.ttf);
+}
+
+//mixin 
+
+//Base-color
+@base-blue: #6699cc;
+@base-text: #333333;
+@base-white: #fff;
+
+
+/*body,
+html {
+	height: 100%;
+}*/
+//стили для слайдера
+.slider {
+	background-color: #f8f8f8;
+
+	.slider-deck {
+		img {
+			width: 350px;
+			height: 250px;
+			margin: auto;
+		}
+	}
+}
+
+//стили для блочного слайдера
+.center-block {
+	img {
+		margin: auto;
+	}
+}
+
+section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+//стили для модального окна
+.modal {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 9999999;
+	display: none;
+	pointer-events: none;
+
+	&-window {
+		width: 320px;
+		height: 320px;
+		position: relative;
+		margin: 15% auto;
+		padding: 20px 20px 15px 20px;
+		border-radius: 10px;
+		background: #fdfdfd;
+
+		.close {
+			color: blue;
+			position: absolute;
+			font-weight: bold;
+			position: absolute;
+			font-size: 18px;
+			top: 5%;
+			right: 5%;
+		}
+
+		h4,
+		p,
+		input,
+		button {
+			text-align: center;
+			width: 100%;
+			margin-top: 16px;
+			border-radius: 10px;
+			box-shadow: none;
+		}
+
+		button {
+			height: 35px;
+			background: @base-blue;
+			border: none;
+			color: white;
+		}
+
+		button:hover {
+			background: #02478d
+		}
+	}
+}
+
+.modal:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.main-nav {
+	background-color: @base-white;
+
+	&-row {
+		height: 110px;
+
+		img {
+			width: 170px;
+			height: 20px;
+			padding-left: 0px;
+		}
+
+		.link-bar {
+			margin-left: 40px;
+			margin-right: 50px;
+
+			a {
+				border: 0px solid @base-text;
+				padding: 10px 10px 10px 5px;
+				font-size: 14px;
+				font-family: 'PFDinTextCompPro-Medium';
+				font-weight: bold;
+				color: @base-text;
+				display: inline-block;
+				text-decoration: none;
+			}
+
+			a:hover {
+				border-bottom: 2px solid @base-blue;
+				margin-bottom: -2px;
+			}
+		}
+
+		span {
+			font-size: 18px;
+			font-family: 'PFDinTextCompPro-Medium';
+			padding-left: 0px;
+			padding-right: 0px;
+
+			i {
+				transform: scale(-1, 1);
+				font-size: 18px;
+				color: @base-blue;
+			}
+		}
+
+		.btn-enter {
+			background-color: @base-blue;
+			border-color: @base-blue;
+		}
+	}
+}
+
+//Header
+//Задаем прозрачность фона и непрозрачность контекта на нем
+.main:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+.main {
+	background-image: url(../img/bg/fon1.JPG);
+	background-size: cover;
+	background-position: 50% 70%;
+	position: relative;
+	margin-top: 120px;
+
+	&-container {
+		position: relative;
+		z-index: 2;
+
+		.left {
+			&-box {
+				padding-top: 130px;
+				padding-bottom: 130px;
+
+				&-text {
+					font-size: 38px;
+					font-family: 'PFDinTextCompPro-Medium';
+					font-weight: bold;
+				}
+
+				&-marks {
+					div {
+						padding-top: 10px;
+
+						span {
+							font-size: 22px;
+							font-family: 'PFDinTextCompPro-Thin';
+						}
+					}
+
+					img {
+						width: 25px;
+						height: 25px;
+					}
+				}
+
+				&-btn {
+					button {
+						width: 270px;
+						height: 70px;
+						background-color: @base-blue;
+						color: white;
+						border-radius: 5px;
+						margin-top: 60px;
+						border: none;
+						font-family: 'PFDinTextCompPro-Medium';
+						font-size: 20px;
+						font-weight: bolder;
+					}
+				}
+			}
+		}
+	}
+
+	.right {
+		&-box {
+			img {
+				position: absolute;
+			}
+
+			&-img1 {
+				width: 215px;
+				height: 300px;
+				right: 140px;
+				bottom: 0px;
+				z-index: 5;
+			}
+
+			&-img2 {
+				width: 215px;
+				height: 370px;
+				right: 70px;
+				bottom: 0px;
+				z-index: 4;
+			}
+
+			&-img3 {
+				width: 215px;
+				height: 440px;
+				right: 0px;
+				bottom: 0px;
+				z-index: 3;
+			}
+		}
+	}
+}
+
+//Section#1
+
+#aboutUs {
+	background-color: #f8f8f8;
+
+	.up-text {
+		font-size: 40px;
+		font-family: 'PFDinTextCompPro-Medium';
+		font-weight: bolder;
+	}
+
+	.down {
+		margin-top: 65px;
+
+		.box {
+			width: 250px;
+			height: 250px;
+			padding: 30px 0px;
+			margin: auto;
+
+			img {
+				width: 65px;
+				height: 65px;
+			}
+
+			i {
+				color: @base-blue;
+			}
+
+			p {
+				margin-top: 40px;
+				font-size: 18px;
+				font-family: 'PFDinTextCompPro-Light';
+				font-weight: bolder;
+				color: @base-text;
+
+				strong {
+					font-size: 20px;
+					color: @base-blue;
+				}
+			}
+		}
+
+		.box:hover {
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0px 0px 32px 0px rgba(51, 51, 51, 0.1);
+		}
+	}
+}
+
+#section2 {
+	background-image: url(../img/bg/fon3.JPG);
+	background-size: cover;
+	background-position: 40% 0%;
+	position: relative;
+	max-height: 815px;
+
+	.section2-container {
+		max-height: 600px;
+		position: relative;
+		z-index: 2;
+
+		.up {
+			margin-bottom: 60px;
+		}
+
+		.center {
+			margin-bottom: 60px;
+
+			&-col {
+				p {
+					img {
+						width: 25px;
+						height: 25px;
+					}
+				}
+
+				button {
+					width: 270px;
+					height: 70px;
+					background-color: @base-blue;
+					color: white;
+					border-radius: 5px;
+					border: none;
+
+					font-family: 'PFDinTextCompPro-Medium';
+					font-size: 20px;
+					font-weight: bolder;
+				}
+			}
+		}
+
+		.down {
+			&-col {
+				div {
+					background: #fff;
+					height: 350px;
+					padding-left: 60px;
+
+					h3 {
+						padding: 60px 0px;
+					}
+
+					p {
+						font-size: 16px;
+
+						img {
+							width: 25px;
+							height: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#section2:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+#typePipes {
+	padding-bottom: 0px;
+	background-color: #f8f8f8;
+
+	.up {
+		margin-bottom: 100px;
+	}
+
+	.down {
+		&-cols {
+			&-box {
+				width: 100%;
+				padding-top: 15px;
+
+				p {
+					margin-bottom: 5px;
+					margin-top: 5px;
+					font-size: 16px;
+					font-family: 'PFDinTextCompPro-Light';
+					font-weight: bolder;
+					color: @base-text;
+				}
+
+				img {
+					margin-top: 10px;
+				}
+			}
+
+			&-box:hover {
+				background-color: rgb(255, 255, 255);
+				box-shadow: 0px 0px 32px 0px rgba(51, 51, 51, 0.1);
+
+				p {
+					color: @base-blue;
+				}
+			}
+		}
+	}
+}
+
+#section4 {
+
+	.row1 {
+		&-text {
+			font-size: 32px;
+			color: @base-blue;
+			font-family: fantasy;
+		}
+	}
+
+	.row2 {
+		margin-bottom: 30px;
+
+		&-text {
+			font-size: 20px;
+			font-family: 'PFDinTextCompPro-Light';
+			color: #666666;
+		}
+	}
+
+	.row3 {
+		margin-bottom: 30px;
+
+		h6 {
+			font-size: 20px;
+			color: black;
+			font-family: fantasy;
+		}
+
+		ul {
+			font-size: 16px;
+			padding-inline-start: 20px;
+		}
+	}
+
+	.row4 {
+		.card-bottom-area {
+			background-color: #f8f8f8;
+
+			.btn-buy {
+				padding: 15px 80px;
+				background-color: @base-blue;
+				color: white;
+				border-radius: 5px;
+				border: none;
+				font-family: 'PFDinTextCompPro-Medium';
+				font-size: 14px;
+				font-weight: bolder;
+			}
+
+			.product-name {
+				color: #666666;
+				font-family: initial;
+				opacity: 0.8;
+			}
+
+			.product-price {
+				font-size: 22px;
+				color: #333333;
+				font-family: fantasy;
+			}
+		}
+
+		.cards:hover {
+			img {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+#section5 {
+	background-color: #f8f8f8;
+
+	.row2 {
+		margin-top: 60px;
+
+		.row2-cols {
+			height: 250px;
+			background-color: #fff;
+			padding-top: 30px;
+			margin: 0px;
+
+			ul,
+			li {
+				margin: 0px;
+				padding: 0px;
+			}
+		}
+	}
+}
+
+#advantages {
+	.line {
+		margin-bottom: 150px;
+	}
+
+	div {
+		border: none;
+	}
+
+	img {
+		max-width: 25%;
+		margin: auto;
+		margin-bottom: 50px;
+	}
+}
+
+footer {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background-color: #333333;
+
+	.col-1,
+	.col-2,
+	.col-3 {
+		img {
+			max-width: 10%;
+		}
+
+		.firstP {
+			color: grey;
+		}
+
+		p {
+			color: white;
+		}
+
+		h6 {
+			color: white;
+		}
+
+		input {
+			padding: 10px 60px 10px 10px;
+			border-radius: 10px;
+			border: none;
+			margin-bottom: 10px;
+		}
+
+		.textarea {
+			padding-bottom: 70px;
+		}
+	}
+}
